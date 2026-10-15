@@ -9,6 +9,10 @@ on:
         description: 'Check queue and configuration without model calls or PRs'
         type: boolean
         default: true
+      connection_check:
+        description: 'Make one read-only CodingRouter model connection check; no development or PR'
+        type: boolean
+        default: false
       issue_number:
         description: 'Owner-created technical Issue number; 0 selects oldest eligible'
         type: number
@@ -26,6 +30,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  connection-check:
+    if: github.event_name == 'workflow_dispatch' && inputs.connection_check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - name: Resolve CodingRouter model ID
+        id: provider-model
+        env:
+          PROVIDER_KEY: ${{ secrets.CODINGROUTER_API_KEY }}
+          RESPONSES_ENDPOINT: ${{ vars.CODEX_RESPONSES_API_URL || 'https://api.codingrouter.ai/v1/responses' }}
+          DESIRED_MODEL: ${{ vars.CODEX_MODEL || '6.1-Sol' }}
+        run: python3 .github/scripts/cloud_agent.py resolve-model
+      - name: Verify actual Codex Responses connection
+        uses: openai/codex-action@bdf19a4a223ec2549a3e2274a0cf61556bc07675
+        with:
+          openai-api-key: ${{ secrets.CODINGROUTER_API_KEY }}
+          responses-api-endpoint: ${{ vars.CODEX_RESPONSES_API_URL || 'https://api.codingrouter.ai/v1/responses' }}
+          prompt: 'Connection test only. Reply with exactly READY. Do not use tools, read files, or modify anything.'
+          output-file: ${{ runner.temp }}/connection-result.txt
+          permission-profile: ':read-only'
+          safety-strategy: drop-sudo
+          model: ${{ steps.provider-model.outputs.model }}
+      - name: Verify response
+        run: |
+          python3 -c 'from pathlib import Path; import os; result = Path(os.environ["RUNNER_TEMP"], "connection-result.txt").read_text().strip(); assert result == "READY", "Unexpected connection-test reply"'
+          echo 'CodingRouter model connection verified through Codex Responses proxy.' >> "$GITHUB_STEP_SUMMARY"
+
   plan:
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -52,7 +88,7 @@ jobs:
           RESPONSES_ENDPOINT: ${{ vars.CODEX_RESPONSES_API_URL || 'https://api.codingrouter.ai/v1/responses' }}
           CODEX_MODEL: ${{ vars.CODEX_MODEL || '6.1-Sol' }}
           EVENT_NAME: ${{ github.event_name }}
-          DRY_RUN: ${{ inputs.dry_run }}
+          DRY_RUN: ${{ inputs.dry_run || inputs.connection_check }}
           ISSUE_NUMBER: ${{ inputs.issue_number || 0 }}
         shell: bash
         run: |
