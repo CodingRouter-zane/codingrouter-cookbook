@@ -1,0 +1,148 @@
+name: CodingRouter cloud technical agent
+
+on:
+  schedule:
+    - cron: '30 3 * * *' # 11:30 Asia/Shanghai; GitHub may delay scheduled runs.
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Check queue and configuration without model calls or PRs'
+        type: boolean
+        default: true
+      issue_number:
+        description: 'Owner-created technical Issue number; 0 selects oldest eligible'
+        type: number
+        default: 0
+  push:
+    branches: [main]
+    paths: ['.github/workflows/codex-cloud.yml', '.github/scripts/**']
+  pull_request:
+    paths: ['.github/workflows/codex-cloud.yml', '.github/scripts/**']
+
+permissions:
+  contents: read
+concurrency:
+  group: codingrouter-cloud-technical
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+    outputs:
+      ready: ${{ steps.select.outputs.ready }}
+      base: ${{ steps.select.outputs.base }}
+      issue: ${{ steps.select.outputs.issue }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Controller tests
+        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py' -v
+      - name: Select one trusted task
+        id: select
+        env:
+          GH_TOKEN: ${{ github.token }}
+          KEY_CONFIGURED: ${{ secrets.OPENAI_API_KEY != '' }}
+          EVENT_NAME: ${{ github.event_name }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          ISSUE_NUMBER: ${{ inputs.issue_number || 0 }}
+        shell: bash
+        run: |
+          args=()
+          if [[ "$EVENT_NAME" != schedule && ( "$EVENT_NAME" != workflow_dispatch || "$DRY_RUN" != false ) ]]; then
+            args+=(--dry-run)
+          fi
+          python3 .github/scripts/cloud_agent.py select "$RUNNER_TEMP/task" --issue "$ISSUE_NUMBER" "${args[@]}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: steps.select.outputs.ready == 'true'
+        with:
+          name: selected-task
+          path: ${{ runner.temp }}/task/
+          retention-days: 7
+
+  develop:
+    needs: plan
+    if: needs.plan.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          ref: ${{ needs.plan.outputs.base }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: selected-task
+          path: ${{ runner.temp }}/task/
+      - name: Develop with Codex
+        uses: openai/codex-action@bdf19a4a223ec2549a3e2274a0cf61556bc07675 # v1, verified 2026-10-15
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: ${{ runner.temp }}/task/prompt.txt
+          output-file: ${{ runner.temp }}/task/codex-report.md
+          permission-profile: ':workspace'
+          safety-strategy: drop-sudo
+          model: ${{ vars.CODEX_MODEL }}
+      - name: Export allowed changes
+        run: |
+          git show HEAD:.github/scripts/cloud_agent.py > "$RUNNER_TEMP/controller.py"
+          python3 "$RUNNER_TEMP/controller.py" export "$RUNNER_TEMP/task"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: candidate-patch
+          path: ${{ runner.temp }}/task/
+          retention-days: 7
+
+  validate:
+    needs: [plan, develop]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          ref: ${{ needs.plan.outputs.base }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: candidate-patch
+          path: ${{ runner.temp }}/task/
+      - name: Validate without API secrets or write credentials
+        env:
+          EXPECTED_ISSUE: ${{ needs.plan.outputs.issue }}
+        run: python3 .github/scripts/cloud_agent.py validate "$RUNNER_TEMP/task"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: validated-patch
+          path: ${{ runner.temp }}/task/
+          retention-days: 7
+
+  publish-pr:
+    needs: [plan, validate]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          ref: ${{ needs.plan.outputs.base }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: validated-patch
+          path: ${{ runner.temp }}/task/
+      - name: Create draft PR without executing generated code
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_ISSUE: ${{ needs.plan.outputs.issue }}
+        run: python3 .github/scripts/cloud_agent.py publish "$RUNNER_TEMP/task"
