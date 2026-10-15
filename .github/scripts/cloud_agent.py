@@ -8,6 +8,7 @@ import subprocess
 import sys
 import unittest
 import urllib.request
+import urllib.parse
 
 REPO = "CodingRouter-zane/codingrouter-cookbook"
 PREFIX = "[技术任务]"
@@ -47,8 +48,18 @@ def eligible(issue, pulls):
             not issue.get("title", "").startswith(PREFIX) or
             not isinstance(number, int) or number < 1):
         return False
-    branch = f"codex/cloud-issue-{number}-"
-    return not any(p.get("head", {}).get("ref", "").startswith(branch) for p in pulls)
+    return not has_task_pr(number, pulls)
+
+
+def has_task_pr(number, pulls):
+    for pr in pulls:
+        branch = pr.get("head", {}).get("ref", "")
+        if branch.startswith((f"codex/cloud-issue-{number}-", f"codex/issue-{number}-")):
+            return True
+        if pr.get("user", {}).get("login", "").lower() in {"codingrouter-zane", "github-actions[bot]"}:
+            if re.search(rf"\b(?:refs?|closes?|fixes?|resolves?)\s+#{number}\b", pr.get("body") or "", re.I):
+                return True
+    return False
 
 
 def output(key, value):
@@ -61,6 +72,31 @@ def summary(message):
         handle.write(message + "\n")
 
 
+def model_name_key(value):
+    return re.sub(r"^gpt-", "", value.strip().lower())
+
+
+def resolve_model():
+    desired = os.environ["DESIRED_MODEL"]
+    endpoint = os.environ["RESPONSES_ENDPOINT"]
+    parsed = urllib.parse.urlsplit(endpoint)
+    models_url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc,
+        parsed.path.rstrip("/").rsplit("/", 1)[0] + "/models", "", ""))
+    request = urllib.request.Request(models_url, headers={
+        "Authorization": "Bearer " + os.environ["PROVIDER_KEY"],
+        "Accept": "application/json"})
+    with urllib.request.urlopen(request, timeout=30) as response:
+        data = json.load(response)
+    ids = [item["id"] for item in data.get("data", []) if isinstance(item.get("id"), str)]
+    candidates = [name for name in ids if name == desired]
+    if not candidates:
+        candidates = [name for name in ids if model_name_key(name) == model_name_key(desired)]
+    if len(candidates) != 1 or not re.fullmatch(r"[A-Za-z0-9._:/-]+", candidates[0]):
+        raise ValueError("Requested model not uniquely available: " + desired + ". Set CODEX_MODEL to its exact API ID.")
+    output("model", candidates[0])
+    summary("Resolved requested model ID: " + candidates[0] + ". Responses compatibility is not yet proven.")
+
+
 def select_task(directory, issue_number, dry_run):
     directory.mkdir(parents=True, exist_ok=True)
     pulls = api("/pulls?state=open&per_page=100")
@@ -69,7 +105,15 @@ def select_task(directory, issue_number, dry_run):
         "/issues?state=open&sort=created&direction=asc&per_page=100")
     chosen = next((i for i in issues if eligible(i, pulls)), None)
     base = git("rev-parse", "HEAD").decode().strip()
-    ready = chosen is not None and not dry_run and os.environ.get("KEY_CONFIGURED") == "true"
+    configured = os.environ.get("KEY_CONFIGURED") == "true"
+    custom = os.environ.get("CUSTOM_PROVIDER") == "true"
+    endpoint = os.environ.get("RESPONSES_ENDPOINT", "")
+    if custom:
+        url = urllib.parse.urlsplit(endpoint)
+        configured = configured and bool(
+            url.scheme == "https" and url.hostname and not url.username and
+            url.path.rstrip("/").endswith("/responses") and os.environ.get("CODEX_MODEL"))
+    ready = chosen is not None and not dry_run and configured
     output("ready", str(ready).lower())
     output("base", base)
     output("issue", str(chosen["number"]) if chosen else "0")
@@ -99,7 +143,8 @@ ISSUE BODY:
     (directory / "prompt.txt").write_text(prompt, encoding="utf-8")
     reason = "Dry-run: selection and controller tests only; no model call or PR." if dry_run else (
         "Ready for one Codex task." if ready else
-        "Waiting for repository Actions secret OPENAI_API_KEY. No model call made.")
+        "Waiting for API configuration: CODINGROUTER_API_KEY + CODEX_RESPONSES_API_URL + CODEX_MODEL "
+        "for CodingRouter, or OPENAI_API_KEY for OpenAI. No model call made.")
     summary(f"Selected Issue #{task['issue']}. {reason}")
 
 
@@ -177,7 +222,7 @@ def publish(directory):
     if current != task["base"]:
         raise ValueError("main changed during this run; retry from a fresh base.")
     pulls = api("/pulls?state=open&per_page=100")
-    if any(p["head"]["ref"].startswith(f"codex/cloud-issue-{task['issue']}-") for p in pulls):
+    if has_task_pr(task["issue"], pulls):
         summary("A PR already exists for this Issue; skipped duplicate.")
         return
     parent = api("/git/commits/" + current)
@@ -208,12 +253,14 @@ def publish(directory):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["select", "export", "validate", "publish"])
-    parser.add_argument("directory", type=Path)
+    parser.add_argument("command", choices=["select", "export", "validate", "publish", "resolve-model"])
+    parser.add_argument("directory", type=Path, nargs="?", default=Path("."))
     parser.add_argument("--issue", type=int, default=0)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     if args.command == "select":
         select_task(args.directory, args.issue, args.dry_run)
+    elif args.command == "resolve-model":
+        resolve_model()
     else:
         {"export": export_patch, "validate": validate, "publish": publish}[args.command](args.directory)

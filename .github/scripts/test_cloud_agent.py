@@ -12,7 +12,10 @@ spec.loader.exec_module(agent)
 
 
 class ControllerTests(unittest.TestCase):
-    def check_selection(self, dry_run, key_configured):
+    def test_model_name_normalization_does_not_choose_another_model(self):
+        self.assertEqual(agent.model_name_key("6.1-Sol"), agent.model_name_key("gpt-6.1-sol"))
+        self.assertNotEqual(agent.model_name_key("6.1-Sol"), agent.model_name_key("gpt-6.1-sol-mini"))
+    def check_selection(self, dry_run, key_configured, custom=False, endpoint="", model=""):
         issue = {"number": 1, "title": "[技术任务] calculator", "state": "open",
                  "user": {"login": "CodingRouter-zane"},
                  "html_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1",
@@ -21,7 +24,9 @@ class ControllerTests(unittest.TestCase):
             root = Path(tmp)
             env = {"GITHUB_OUTPUT": str(root / "outputs"),
                    "GITHUB_STEP_SUMMARY": str(root / "summary"),
-                   "KEY_CONFIGURED": str(key_configured).lower()}
+                   "KEY_CONFIGURED": str(key_configured).lower(),
+                   "CUSTOM_PROVIDER": str(custom).lower(),
+                   "RESPONSES_ENDPOINT": endpoint, "CODEX_MODEL": model}
             with patch.dict(os.environ, env), patch.object(agent, "api", side_effect=[[], [issue]]), \
                     patch.object(agent, "git", return_value=b"abc123\n"):
                 agent.select_task(root / "task", 0, dry_run)
@@ -38,6 +43,17 @@ class ControllerTests(unittest.TestCase):
 
     def test_configured_real_run_is_ready(self):
         output, _ = self.check_selection(False, True)
+        self.assertIn("ready=true", output)
+
+    def test_custom_provider_requires_endpoint_and_model(self):
+        for endpoint, model in [("", "model"), ("http://example.com/v1/responses", "model"),
+                                ("https://example.com/v1/chat/completions", "model"),
+                                ("https://example.com/v1/responses", "")]:
+            output, _ = self.check_selection(False, True, True, endpoint, model)
+            self.assertIn("ready=false", output)
+
+    def test_custom_responses_provider_ready(self):
+        output, _ = self.check_selection(False, True, True, "https://example.com/v1/responses", "model")
         self.assertIn("ready=true", output)
 
     def test_allow_examples_and_tests(self):
@@ -63,6 +79,8 @@ class ControllerTests(unittest.TestCase):
                  "user": {"login": "CodingRouter-zane"}}
         self.assertFalse(agent.eligible(issue, [{"head": {"ref": "codex/cloud-issue-1-123"}}]))
         self.assertTrue(agent.eligible(issue, [{"head": {"ref": "codex/cloud-issue-12-123"}}]))
+        self.assertFalse(agent.eligible(issue, [{"head": {"ref": "codex/issue-1-cost"}}]))
+        self.assertFalse(agent.eligible(issue, [{"user": {"login": "CodingRouter-zane"}, "body": "Refs #1"}]))
 
 
 if __name__ == "__main__":
