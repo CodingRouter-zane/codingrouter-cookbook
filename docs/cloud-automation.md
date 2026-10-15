@@ -37,5 +37,13 @@ Disable the workflow from its Actions page to stop cloud runs. Remove the secret
 - The user added `CODINGROUTER_API_KEY` and explicitly authorized the repository's Actions create/approve PR setting. The worker only creates draft PRs; it never approves or merges them.
 - Actual Codex connection check [run #5](https://github.com/CodingRouter-zane/codingrouter-cookbook/actions/runs/38727482758) succeeded with resolved model `gpt-6.1-sol` and exact response `READY`. Controller tests also passed (10 tests).
 - The old desktop automation `3-ai` is paused to prevent duplicate scheduled work. GitHub-hosted scheduled runs do not depend on the user's computer or phone being on.
-- Issue #1 already has open PR #2 and was correctly skipped. The full generated-code → isolated tests → draft-PR chain remains unverified until the next genuine eligible task. The connection check is not a model identity, performance or SLA guarantee.
+- Issue #1 already has open PR #2 and was correctly skipped. The user subsequently explicitly requested full verification; the clearly labeled acceptance Issue #4 was created for this purpose. This fixture is not a new article or product performance claim.
 - Existing open PRs require separate review or maintenance; the cloud selector does not automatically revise them.
+
+## Full workflow acceptance — 2026-10-15
+
+At the user's explicit request, [run #6](https://github.com/CodingRouter-zane/codingrouter-cookbook/actions/runs/38729260706) processed [acceptance Issue #4](https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/4). The actual CodingRouter-backed Codex development, allowed-patch export, isolated unittest validation and trusted PR publisher all succeeded. The independent validator ran **11 tests** on Python **3.12.3** and compiled the generated Python files.
+
+The publisher created [draft PR #5](https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/5), head `80ccd6002507fef0d54dea98ef75991f50435dad`, based on `91e26bf420624faaf5fe4b96dc2710cae03ae323`. Review confirmed exactly three added acceptance files and no deleted files. The generated code remained on its branch: immediately after the run, `main` still matched the selected base. This acceptance PR must remain unmerged unless the user separately requests its publication.
+
+This verifies one manually triggered full cloud task. The first future scheduled run, existing-PR revisions, X account connectivity and post scheduling are separate checks; none are proven by this run. It is not an availability, model-identity, throughput or SLA guarantee.
