@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-15T19:30:16+08:00",
+  "updated_at": "2026-10-16T12:31:15+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -66,6 +66,41 @@
       "content_url": null,
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1",
       "pr_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/2",
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-request-retry",
+      "title": "请求失败后，如何决定重试、停止或切换模型",
+      "topic_type": "接入排错",
+      "source_urls": [
+        "https://docs.litellm.ai/docs/completion/reliable_completions",
+        "https://openrouter.ai/docs/api_reference/errors-and-debugging"
+      ],
+      "verified_at": "2026-10-16",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-stream-error-handling",
+      "title": "流式请求已返回 HTTP 200，为什么仍要检查中途错误",
+      "topic_type": "接入排错",
+      "source_urls": [
+        "https://openrouter.ai/docs/api_reference/errors-and-debugging"
+      ],
+      "verified_at": "2026-10-16",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
       "product_facts": {
         "public_source_urls": [],
         "verification_status": "unknown"
