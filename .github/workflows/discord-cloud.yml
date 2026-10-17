@@ -1,0 +1,60 @@
+name: CodingRouter Discord cloud operations
+on:
+  schedule:
+    - cron: '0 4 * * *' # Daily 12:00 Asia/Shanghai; scheduled runs may be delayed.
+  workflow_dispatch:
+    inputs:
+      check_only:
+        description: 'Check Bot access only; no model call or draft delivery'
+        type: boolean
+        default: true
+  push:
+    branches: [main]
+    paths: ['.github/workflows/discord-cloud.yml', '.github/scripts/discord_ops.py', '.github/scripts/test_discord_ops.py']
+  pull_request:
+    paths: ['.github/workflows/discord-cloud.yml', '.github/scripts/discord_ops.py', '.github/scripts/test_discord_ops.py']
+permissions:
+  contents: read
+concurrency:
+  group: codingrouter-discord-operations
+  cancel-in-progress: false
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s .github/scripts -p 'test_discord_ops.py' -v
+      - name: Configuration status
+        env:
+          BOT_READY: ${{ secrets.DISCORD_BOT_TOKEN != '' }}
+          CONFIG_READY: ${{ secrets.DISCORD_CHANNEL_CONFIG != '' }}
+          ENABLED: ${{ vars.DISCORD_CLOUD_ENABLED }}
+        run: |
+          if [[ "$BOT_READY" == true && "$CONFIG_READY" == true && "$ENABLED" == true ]]; then
+            echo 'Cloud access configured. Runtime verification still required.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Deployment tests only. Discord access is not fully configured/enabled.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+  operate:
+    needs: tests
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && vars.DISCORD_CLOUD_ENABLED == 'true')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - name: Read authorized channels and prepare private review drafts
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_CONFIG: ${{ secrets.DISCORD_CHANNEL_CONFIG }}
+          CODINGROUTER_API_KEY: ${{ secrets.CODINGROUTER_API_KEY }}
+          CHECK_ONLY: ${{ inputs.check_only }}
+        shell: bash
+        run: |
+          args=()
+          if [[ "$CHECK_ONLY" == true ]]; then args+=(--check); fi
+          python3 .github/scripts/discord_ops.py "${args[@]}"
