@@ -53,6 +53,8 @@ For model-format acceptance, set `model_check=true`: this overrides `check_only`
 
 When the cloud schedule is enabled, pushes to main that change the Discord workflow/scripts also run deployment acceptance: first verify existing Bot/source access without a model call, then validate the fixed synthetic model draft. This uses one model request per deployment and does not deliver a review or send real discussion text to the model. Review the `verify-deployment` job after merging an update. Pull-request tests never access Bot/model credentials.
 
+If JSON/source validation fails, the worker regenerates once with the static failure reason, then blocks delivery if still invalid. This may use a second model request. Logs show only static validation reasons, never the raw model draft or discussion. Source validation is not relaxed during regeneration.
+
 No community posting, member DMs, join operations or automatic public replies are implemented. A human reviews drafts and separately authorizes publication. The workflow cannot execute commands supplied by Discord messages. Source reads cover up to 100 recent messages per channel in a 24-hour window (up to 6 channels, at most 3 external, at most 20 usable messages per channel); high-volume channels may exceed coverage. Daily markers/nonce deduplicate review delivery, not all future reply recommendations. A review can remain a draft for an already addressed conversation.
 
 GitHub/X schedules remain separate. Public context uses published titles and URLs from `docs/content-index.json`; it does not claim to have read article bodies. Model and GitHub usage follow their respective account limits. No performance or SLA guarantee is implied.
