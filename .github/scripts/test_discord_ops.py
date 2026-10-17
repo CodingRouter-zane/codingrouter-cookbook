@@ -99,6 +99,27 @@ class DiscordTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 ops.generate(self.sample()[0], [], "fake")
 
+    def test_invalid_model_draft_regenerates_once(self):
+        items, brief = self.sample()
+        def response(text):
+            return {"status": "completed", "output": [{"type": "message", "content": [
+                {"type": "output_text", "text": text}]}]}
+        with patch.object(ops, "request", side_effect=[{"data": [{"id": "gpt-6.1-sol"}]},
+                response("not json"), response(json.dumps(brief))]) as req:
+            self.assertIn(items[0]["url"], ops.generate(items, [], "fake"))
+            self.assertEqual(req.call_count, 3)
+
+    def test_bad_evidence_still_blocks_after_repair(self):
+        items, brief = self.sample()
+        brief["replies"][0]["evidence"] = "invented"
+        response = {"status": "completed", "output": [{"type": "message", "content": [
+            {"type": "output_text", "text": json.dumps(brief)}]}]}
+        with patch.object(ops, "request", side_effect=[{"data": [{"id": "gpt-6.1-sol"}]},
+                response, response]) as req:
+            with self.assertRaises(ops.BriefError):
+                ops.generate(items, [], "fake")
+            self.assertEqual(req.call_count, 3)
+
     def test_empty_source_does_not_call_model(self):
         with patch.object(ops, "request") as req:
             self.assertIn("未调用模型", ops.generate([], [], None))
