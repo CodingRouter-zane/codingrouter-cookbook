@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-16T12:31:15+08:00",
+  "updated_at": "2026-10-17T12:26:08+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -97,6 +97,41 @@
         "https://openrouter.ai/docs/api_reference/errors-and-debugging"
       ],
       "verified_at": "2026-10-16",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-selection-cost-update",
+      "title": "用户想更快，谁为加速买单？Claude Fast mode 的选型方法",
+      "topic_type": "选型成本",
+      "source_urls": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+      ],
+      "verified_at": "2026-10-17",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-voice-latest-migration",
+      "title": "API 没改，语音模型却换了：如何管理 Grok Voice latest 升级",
+      "topic_type": "接入迁移",
+      "source_urls": [
+        "https://docs.x.ai/developers/release-notes"
+      ],
+      "verified_at": "2026-10-17",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
