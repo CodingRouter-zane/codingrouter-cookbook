@@ -1,0 +1,5 @@
+task_id,currency,total_cost,qualified
+demo-001,CNY,0.10,true
+demo-002,CNY,0.20,false
+demo-003,CNY,0.15,true
+demo-004,USD,0.03,false
