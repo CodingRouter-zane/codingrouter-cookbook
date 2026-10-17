@@ -8,6 +8,10 @@ on:
         description: 'Check Bot access only; no model call or draft delivery'
         type: boolean
         default: true
+      model_check:
+        description: 'Validate a synthetic model draft only; no Discord reads/delivery (overrides check_only)'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths: ['.github/workflows/discord-cloud.yml', '.github/scripts/discord_ops.py', '.github/scripts/test_discord_ops.py']
@@ -53,8 +57,30 @@ jobs:
           DISCORD_CHANNEL_CONFIG: ${{ secrets.DISCORD_CHANNEL_CONFIG }}
           CODINGROUTER_API_KEY: ${{ secrets.CODINGROUTER_API_KEY }}
           CHECK_ONLY: ${{ inputs.check_only }}
+          MODEL_CHECK: ${{ inputs.model_check }}
         shell: bash
         run: |
           args=()
-          if [[ "$CHECK_ONLY" == true ]]; then args+=(--check); fi
+          if [[ "$MODEL_CHECK" == true ]]; then
+            args+=(--model-check)
+          elif [[ "$CHECK_ONLY" == true ]]; then
+            args+=(--check)
+          fi
           python3 .github/scripts/discord_ops.py "${args[@]}"
+  verify-deployment:
+    needs: tests
+    if: github.event_name == 'push' && vars.DISCORD_CLOUD_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - name: Verify existing Bot reads and synthetic model format without delivery
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_CONFIG: ${{ secrets.DISCORD_CHANNEL_CONFIG }}
+          CODINGROUTER_API_KEY: ${{ secrets.CODINGROUTER_API_KEY }}
+        run: |
+          python3 .github/scripts/discord_ops.py --check
+          python3 .github/scripts/discord_ops.py --model-check
