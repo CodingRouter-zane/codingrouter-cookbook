@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-17T12:26:08+08:00",
+  "updated_at": "2026-10-18T12:29:41+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -61,7 +61,7 @@
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/effective-task-cost.md",
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1"
       ],
-      "verified_at": "2026-10-15",
+      "verified_at": "2026-10-18",
       "status": "pr_pending",
       "content_url": null,
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1",
@@ -73,13 +73,15 @@
     },
     {
       "topic_id": "cr-request-retry",
-      "title": "请求失败后，如何决定重试、停止或切换模型",
+      "title": "重试能救一次请求，也可能拖垮整条任务：模型 API 失败后怎么处理？",
       "topic_type": "接入排错",
       "source_urls": [
         "https://docs.litellm.ai/docs/completion/reliable_completions",
-        "https://openrouter.ai/docs/api_reference/errors-and-debugging"
+        "https://openrouter.ai/docs/api_reference/errors-and-debugging",
+        "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+        "https://platform.claude.com/docs/en/release-notes/overview"
       ],
-      "verified_at": "2026-10-16",
+      "verified_at": "2026-10-18",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
@@ -114,7 +116,7 @@
         "https://platform.claude.com/docs/en/release-notes/overview",
         "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
       ],
-      "verified_at": "2026-10-17",
+      "verified_at": "2026-10-18",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
