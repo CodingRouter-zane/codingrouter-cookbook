@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-18T12:29:41+08:00",
+  "updated_at": "2026-10-19T12:25:50+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -81,9 +81,9 @@
         "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
         "https://platform.claude.com/docs/en/release-notes/overview"
       ],
-      "verified_at": "2026-10-18",
-      "status": "candidate",
-      "content_url": null,
+      "verified_at": "2026-10-19",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/troubleshooting/retry-budget.md",
       "issue_url": null,
       "pr_url": null,
       "product_facts": {
