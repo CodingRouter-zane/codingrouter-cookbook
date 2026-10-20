@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-19T12:25:50+08:00",
+  "updated_at": "2026-10-20T12:30:52+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -61,7 +61,7 @@
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/effective-task-cost.md",
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1"
       ],
-      "verified_at": "2026-10-18",
+      "verified_at": "2026-10-20",
       "status": "pr_pending",
       "content_url": null,
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1",
@@ -134,6 +134,25 @@
         "https://docs.x.ai/developers/release-notes"
       ],
       "verified_at": "2026-10-17",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-deepseek-server-tools-billing",
+      "title": "卖“无限联网”前，先给 Agent 的搜索和抓取设费用边界",
+      "topic_type": "选型成本与计费变化",
+      "source_urls": [
+        "https://api-docs.deepseek.com/zh-cn/updates/",
+        "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "https://api-docs.deepseek.com/zh-cn/guides/search/"
+      ],
+      "verified_at": "2026-10-20",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
