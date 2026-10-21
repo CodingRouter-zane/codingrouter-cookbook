@@ -11,6 +11,7 @@ Practical guides for evaluating and integrating AI model APIs.
 | [API 接入前的验收清单](docs/api-acceptance.md) | 接口能返回内容，是否足够上线？ |
 | [重试、停止与回退](docs/troubleshooting/retry-budget.md) | API 失败后，怎样避免越重试越慢？ |
 | [每个有效任务究竟花了多少钱](docs/effective-task-cost.md) | 如何比较不同接口的实际成本？ |
+| [用 CSV 离线复算有效任务成本](examples/effective-task-cost/README.md) | 如何把失败、返工和零合格结果计入单位成本？ |
 | [理解用户自带额度的应用模式](docs/user-funded-apps.md) | 如何区分授权、额度与应用接入？ |
 
 ## 阅读说明

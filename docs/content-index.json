@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-20T12:30:52+08:00",
+  "updated_at": "2026-10-21T12:31:20+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -55,15 +55,15 @@
     },
     {
       "topic_id": "cr-effective-task-cost-csv",
-      "title": "离线有效任务成本计算器",
+      "title": "总费用不高，为什么每个有效结果仍然贵？用 CSV 离线复算",
       "topic_type": "技术工具",
       "source_urls": [
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/effective-task-cost.md",
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1"
       ],
-      "verified_at": "2026-10-20",
-      "status": "pr_pending",
-      "content_url": null,
+      "verified_at": "2026-10-21",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/examples/effective-task-cost/README.md",
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1",
       "pr_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/2",
       "product_facts": {
