@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-21T12:31:20+08:00",
+  "updated_at": "2026-10-22T12:33:09+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -145,14 +145,32 @@
     },
     {
       "topic_id": "cr-deepseek-server-tools-billing",
-      "title": "卖“无限联网”前，先给 Agent 的搜索和抓取设费用边界",
+      "title": "用户越爱用联网，固定月费越容易亏：给 Agent 的搜索和抓取设费用边界",
       "topic_type": "选型成本与计费变化",
       "source_urls": [
         "https://api-docs.deepseek.com/zh-cn/updates/",
         "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
         "https://api-docs.deepseek.com/zh-cn/guides/search/"
       ],
-      "verified_at": "2026-10-20",
+      "verified_at": "2026-10-22",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-claude-api-2026-10-21-migration",
+      "title": "SDK 一升级，代理鉴权就可能失效：Claude API 2026-10-21 迁移检查表",
+      "topic_type": "接入迁移",
+      "source_urls": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/api/migration-2026-10-21"
+      ],
+      "verified_at": "2026-10-22",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
