@@ -12,6 +12,7 @@ Practical guides for evaluating and integrating AI model APIs.
 | [重试、停止与回退](docs/troubleshooting/retry-budget.md) | API 失败后，怎样避免越重试越慢？ |
 | [每个有效任务究竟花了多少钱](docs/effective-task-cost.md) | 如何比较不同接口的实际成本？ |
 | [用 CSV 离线复算有效任务成本](examples/effective-task-cost/README.md) | 如何把失败、返工和零合格结果计入单位成本？ |
+| [给 Agent 的搜索和抓取设费用边界](docs/updates/2026-10-23-deepseek-search-fetch-cost.md) | 固定订阅如何处理按次增长的联网工具费？ |
 | [理解用户自带额度的应用模式](docs/user-funded-apps.md) | 如何区分授权、额度与应用接入？ |
 
 ## 阅读说明
