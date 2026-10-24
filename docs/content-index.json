@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-23T12:26:23+08:00",
+  "updated_at": "2026-10-24T12:35:30+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -171,6 +171,24 @@
         "https://platform.claude.com/docs/en/api/migration-2026-10-21"
       ],
       "verified_at": "2026-10-22",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-ai-sdk-toolchoice-none",
+      "title": "明明禁止了工具调用，客户端为什么还可能执行？Vercel AI SDK 5.0.281 修复边界",
+      "topic_type": "接入排错",
+      "source_urls": [
+        "https://github.com/vercel/ai/releases/tag/ai%405.0.281",
+        "https://github.com/vercel/ai/pull/23846"
+      ],
+      "verified_at": "2026-10-24",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
