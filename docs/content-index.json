@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-25T12:34:22+08:00",
+  "updated_at": "2026-10-26T12:36:00+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -182,17 +182,18 @@
     },
     {
       "topic_id": "cr-ai-sdk-toolchoice-none",
-      "title": "明明禁止了工具调用，客户端为什么还可能执行？Vercel AI SDK 5.0.281 修复边界",
+      "title": "写了 toolChoice: 'none'，工具还可能被执行？别把模型参数当成安全边界",
       "topic_type": "接入排错",
       "source_urls": [
         "https://github.com/vercel/ai/releases/tag/ai%405.0.281",
-        "https://github.com/vercel/ai/pull/23846"
+        "https://github.com/vercel/ai/pull/23846",
+        "https://github.com/vercel/ai/blob/main/content/docs/03-ai-sdk-core/15-tools-and-tool-calling.mdx"
       ],
-      "verified_at": "2026-10-25",
-      "status": "technical_issue",
-      "content_url": null,
+      "verified_at": "2026-10-26",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/troubleshooting/tool-choice-none.md",
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/9",
-      "pr_url": null,
+      "pr_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/10",
       "product_facts": {
         "public_source_urls": [],
         "verification_status": "unknown"
