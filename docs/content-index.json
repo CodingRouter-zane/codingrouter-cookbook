@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-26T12:36:00+08:00",
+  "updated_at": "2026-10-27T12:32:41+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -201,16 +201,36 @@
     },
     {
       "topic_id": "cr-litellm-cosign-key-rotation",
-      "title": "镜像没被篡改，为什么验证仍失败？LiteLLM 更换 Cosign 密钥后的升级检查",
+      "title": "验签密钥换了，离线启动也可能退出：LiteLLM 1.106.3—1.106.4 升级检查",
       "topic_type": "部署安全与接入排错",
       "source_urls": [
         "https://github.com/BerriAI/litellm/releases/tag/v1.106.3",
+        "https://github.com/BerriAI/litellm/releases/tag/v1.106.4",
         "https://github.com/BerriAI/litellm/commit/e82a3c646908ba0a6ee0beddc4310d7a6cac4065"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-10-27",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-tool-choice-guard-example",
+      "title": "禁止工具只是参数？用离线 mock 验证执行层默认拒绝",
+      "topic_type": "技术工具",
+      "source_urls": [
+        "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/troubleshooting/tool-choice-none.md",
+        "https://github.com/vercel/ai/releases/tag/ai%405.0.281",
+        "https://github.com/vercel/ai/pull/23846"
+      ],
+      "verified_at": "2026-10-27",
+      "status": "technical_issue",
+      "content_url": null,
+      "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/11",
       "pr_url": null,
       "product_facts": {
         "public_source_urls": [],
