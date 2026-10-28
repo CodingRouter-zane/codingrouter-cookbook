@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-27T12:32:41+08:00",
+  "updated_at": "2026-10-28T12:31:51+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -225,9 +225,10 @@
       "source_urls": [
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/troubleshooting/tool-choice-none.md",
         "https://github.com/vercel/ai/releases/tag/ai%405.0.281",
-        "https://github.com/vercel/ai/pull/23846"
+        "https://github.com/vercel/ai/pull/23846",
+        "https://github.com/CodingRouter-zane/codingrouter-cookbook/actions/runs/40630859366"
       ],
-      "verified_at": "2026-10-27",
+      "verified_at": "2026-10-28",
       "status": "technical_issue",
       "content_url": null,
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/11",
