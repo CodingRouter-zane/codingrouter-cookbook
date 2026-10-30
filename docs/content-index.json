@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-28T12:31:51+08:00",
+  "updated_at": "2026-10-30T12:27:00+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -232,6 +232,24 @@
       "status": "technical_issue",
       "content_url": null,
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/11",
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-litellm-enterprise-master-key-security",
+      "title": "Release 页写“无需行动”，安全公告却是 CVSS 10.0：LiteLLM Enterprise 怎么升级？",
+      "topic_type": "部署安全与接入排错",
+      "source_urls": [
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-w4c7-34wj-hqm8",
+        "https://github.com/BerriAI/litellm/releases/tag/v1.106.5"
+      ],
+      "verified_at": "2026-10-30",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/updates/2026-10-30-litellm-enterprise-master-key-security.md",
+      "issue_url": null,
       "pr_url": null,
       "product_facts": {
         "public_source_urls": [],
