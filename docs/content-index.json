@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-30T12:27:00+08:00",
+  "updated_at": "2026-10-31T12:29:47+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -206,9 +206,10 @@
       "source_urls": [
         "https://github.com/BerriAI/litellm/releases/tag/v1.106.3",
         "https://github.com/BerriAI/litellm/releases/tag/v1.106.4",
-        "https://github.com/BerriAI/litellm/commit/e82a3c646908ba0a6ee0beddc4310d7a6cac4065"
+        "https://github.com/BerriAI/litellm/commit/e82a3c646908ba0a6ee0beddc4310d7a6cac4065",
+        "https://github.com/BerriAI/litellm/releases/tag/v1.106.6"
       ],
-      "verified_at": "2026-10-27",
+      "verified_at": "2026-10-31",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
@@ -249,6 +250,41 @@
       "verified_at": "2026-10-30",
       "status": "published",
       "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/updates/2026-10-30-litellm-enterprise-master-key-security.md",
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-ai-sdk-partial-json-minus",
+      "title": "流式 JSON 只到负号，为什么不能马上判坏？结构化输出的片段与完成值",
+      "topic_type": "接入排错",
+      "source_urls": [
+        "https://github.com/vercel/ai/releases/tag/ai@7.0.158"
+      ],
+      "verified_at": "2026-10-31",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-xai-custom-moderation-controls",
+      "title": "请求级内容规则不是全局安全策略：Grok guidelines 怎么避免漏传与误拒",
+      "topic_type": "接入排错",
+      "source_urls": [
+        "https://docs.x.ai/developers/release-notes",
+        "https://docs.x.ai/developers/advanced-api-usage/custom-moderation-controls"
+      ],
+      "verified_at": "2026-10-31",
+      "status": "candidate",
+      "content_url": null,
       "issue_url": null,
       "pr_url": null,
       "product_facts": {
