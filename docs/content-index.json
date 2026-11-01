@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-31T12:29:47+08:00",
+  "updated_at": "2026-11-01T12:31:00+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -93,15 +93,16 @@
     },
     {
       "topic_id": "cr-stream-error-handling",
-      "title": "流式请求已返回 HTTP 200，为什么仍要检查中途错误",
+      "title": "HTTP 200 之后仍可能失败：用离线 SSE 解析器拦住半截答案",
       "topic_type": "接入排错",
       "source_urls": [
-        "https://openrouter.ai/docs/api_reference/errors-and-debugging"
+        "https://openrouter.ai/docs/api-reference/errors-and-debugging",
+        "https://html.spec.whatwg.org/multipage/server-sent-events.html"
       ],
-      "verified_at": "2026-10-16",
-      "status": "candidate",
+      "verified_at": "2026-11-01",
+      "status": "technical_issue",
       "content_url": null,
-      "issue_url": null,
+      "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/12",
       "pr_url": null,
       "product_facts": {
         "public_source_urls": [],
@@ -110,13 +111,13 @@
     },
     {
       "topic_id": "cr-selection-cost-update",
-      "title": "用户想更快，谁为加速买单？Claude Fast mode 的选型方法",
+      "title": "快模式不是永久档位：Claude Opus 4.8 fast 11月30日下线，如何控制迁移成本",
       "topic_type": "选型成本",
       "source_urls": [
         "https://platform.claude.com/docs/en/release-notes/overview",
         "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
       ],
-      "verified_at": "2026-10-18",
+      "verified_at": "2026-11-01",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
