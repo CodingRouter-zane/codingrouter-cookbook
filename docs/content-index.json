@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-02T12:36:00+08:00",
+  "updated_at": "2026-11-02T12:37:00+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -99,11 +99,11 @@
         "https://openrouter.ai/docs/api-reference/errors-and-debugging",
         "https://html.spec.whatwg.org/multipage/server-sent-events.html"
       ],
-      "verified_at": "2026-11-01",
-      "status": "technical_issue",
+      "verified_at": "2026-11-02",
+      "status": "pr_pending",
       "content_url": null,
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/12",
-      "pr_url": null,
+      "pr_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/13",
       "product_facts": {
         "public_source_urls": [],
         "verification_status": "unknown"
