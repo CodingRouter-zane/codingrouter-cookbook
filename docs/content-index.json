@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-01T12:31:00+08:00",
+  "updated_at": "2026-11-02T12:36:00+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -260,14 +260,17 @@
     },
     {
       "topic_id": "cr-ai-sdk-partial-json-minus",
-      "title": "流式 JSON 只到负号，为什么不能马上判坏？结构化输出的片段与完成值",
+      "title": "流式 JSON 只到负号，为什么不能马上判坏？别让半成品覆盖最终结果",
       "topic_type": "接入排错",
       "source_urls": [
-        "https://github.com/vercel/ai/releases/tag/ai@7.0.158"
+        "https://github.com/vercel/ai/releases/tag/ai%407.0.158",
+        "https://github.com/vercel/ai/pull/24157",
+        "https://ai-sdk.dev/docs/reference/ai-sdk-core/output",
+        "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data"
       ],
-      "verified_at": "2026-10-31",
-      "status": "candidate",
-      "content_url": null,
+      "verified_at": "2026-11-02",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/troubleshooting/partial-json-streaming.md",
       "issue_url": null,
       "pr_url": null,
       "product_facts": {
