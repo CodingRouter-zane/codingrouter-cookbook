@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-02T12:37:00+08:00",
+  "updated_at": "2026-11-03T12:30:30+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -287,6 +287,60 @@
         "https://docs.x.ai/developers/advanced-api-usage/custom-moderation-controls"
       ],
       "verified_at": "2026-10-31",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-xai-image-quality-retirement",
+      "title": "接口没报错，画质却切到 low：Grok Imagine 旧 slug 迁移检查",
+      "topic_type": "接入迁移与成本",
+      "source_urls": [
+        "https://docs.x.ai/developers/release-notes",
+        "https://docs.x.ai/developers/migration/imagine-image-quality-nov-2"
+      ],
+      "verified_at": "2026-11-03",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-xai-output-watermarking",
+      "title": "接口格式不变，输出策略已变：Grok 文本水印怎么进审计链",
+      "topic_type": "合规与接入审计",
+      "source_urls": [
+        "https://docs.x.ai/developers/advanced-api-usage/watermarking"
+      ],
+      "verified_at": "2026-11-03",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-claude-message-threads",
+      "title": "少传历史不等于少留状态：Claude Message Threads 的速度与恢复边界",
+      "topic_type": "Agent接入与状态管理",
+      "source_urls": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/build-with-claude/message-threads",
+        "https://platform.claude.com/docs/en/manage-claude/api-and-data-retention"
+      ],
+      "verified_at": "2026-11-03",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
