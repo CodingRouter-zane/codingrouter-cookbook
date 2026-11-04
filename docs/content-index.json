@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-03T12:30:30+08:00",
+  "updated_at": "2026-11-04T12:34:30+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -341,6 +341,25 @@
         "https://platform.claude.com/docs/en/manage-claude/api-and-data-retention"
       ],
       "verified_at": "2026-11-03",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-claude-text-watermark",
+      "title": "改一个采样参数，文本水印可能没了：Claude 合规检查不能只看模型名",
+      "topic_type": "合规与参数管理",
+      "source_urls": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/build-with-claude/text-watermark",
+        "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
+      ],
+      "verified_at": "2026-11-04",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
