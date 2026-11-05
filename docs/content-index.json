@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-04T12:34:30+08:00",
+  "updated_at": "2026-11-05T12:30:20+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -360,6 +360,24 @@
         "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
       ],
       "verified_at": "2026-11-04",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-ai-sdk-approval-continuation-metadata",
+      "title": "第一次审批信息完整，恢复执行时却可能变了：AI SDK 工具审批续跑检查",
+      "topic_type": "Agent权限与接入排错",
+      "source_urls": [
+        "https://github.com/vercel/ai/releases/tag/ai%407.0.162",
+        "https://github.com/vercel/ai/blob/main/content/docs/03-ai-sdk-core/15-tools-and-tool-calling.mdx"
+      ],
+      "verified_at": "2026-11-05",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
