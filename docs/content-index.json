@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-05T12:30:20+08:00",
+  "updated_at": "2026-11-06T12:30:00+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -302,11 +302,13 @@
       "topic_type": "接入迁移与成本",
       "source_urls": [
         "https://docs.x.ai/developers/release-notes",
-        "https://docs.x.ai/developers/migration/imagine-image-quality-nov-2"
+        "https://docs.x.ai/developers/migration/imagine-image-quality-nov-2",
+        "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
+        "https://docs.x.ai/developers/pricing"
       ],
-      "verified_at": "2026-11-03",
-      "status": "candidate",
-      "content_url": null,
+      "verified_at": "2026-11-06",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/updates/2026-11-06-grok-imagine-image-quality-migration.md",
       "issue_url": null,
       "pr_url": null,
       "product_facts": {
