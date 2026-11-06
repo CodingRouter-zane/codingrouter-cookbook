@@ -16,6 +16,7 @@ Practical guides for evaluating and integrating AI model APIs.
 | [用 CSV 离线复算有效任务成本](examples/effective-task-cost/README.md) | 如何把失败、返工和零合格结果计入单位成本？ |
 | [给 Agent 的搜索和抓取设费用边界](docs/updates/2026-10-23-deepseek-search-fetch-cost.md) | 固定订阅如何处理按次增长的联网工具费？ |
 | [LiteLLM Enterprise 安全升级检查](docs/updates/2026-10-30-litellm-enterprise-master-key-security.md) | Release 页写“无需行动”，为什么安全公告仍要求判断版本？ |
+| [Grok Imagine 旧 slug 迁移检查](docs/updates/2026-11-06-grok-imagine-image-quality-migration.md) | 接口仍成功，怎样确认画质档和成本没有悄悄变化？ |
 | [理解用户自带额度的应用模式](docs/user-funded-apps.md) | 如何区分授权、额度与应用接入？ |
 
 ## 阅读说明
