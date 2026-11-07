@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-06T12:30:00+08:00",
+  "updated_at": "2026-11-07T12:35:00+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -323,7 +323,7 @@
       "source_urls": [
         "https://docs.x.ai/developers/advanced-api-usage/watermarking"
       ],
-      "verified_at": "2026-11-03",
+      "verified_at": "2026-11-07",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
@@ -380,6 +380,41 @@
         "https://github.com/vercel/ai/blob/main/content/docs/03-ai-sdk-core/15-tools-and-tool-calling.mdx"
       ],
       "verified_at": "2026-11-05",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-claude-ip-allowlist-boundaries",
+      "title": "密钥加了 IP 白名单，就能拦住所有调用吗？Claude 覆盖范围与锁死检查",
+      "topic_type": "部署安全与访问控制",
+      "source_urls": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/manage-claude/ip-allowlist"
+      ],
+      "verified_at": "2026-11-07",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-ai-sdk-telemetry-content-controls",
+      "title": "关了 recordInputs，嵌套内容就一定不会进遥测吗？AI SDK 7.0.163 升级检查",
+      "topic_type": "可观测性与隐私",
+      "source_urls": [
+        "https://github.com/vercel/ai/releases/tag/ai%407.0.163"
+      ],
+      "verified_at": "2026-11-07",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
