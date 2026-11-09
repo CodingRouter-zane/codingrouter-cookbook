@@ -12,6 +12,7 @@ Practical guides for evaluating and integrating AI model APIs.
 | [重试、停止与回退](docs/troubleshooting/retry-budget.md) | API 失败后，怎样避免越重试越慢？ |
 | [工具禁用的执行边界](docs/troubleshooting/tool-choice-none.md) | 写了 `toolChoice: 'none'`，怎样确认工具真的不会执行？ |
 | [流式 JSON 片段与最终值](docs/troubleshooting/partial-json-streaming.md) | 一个片段暂时不是合法 JSON，何时才算真正失败？ |
+| [Claude IP 白名单边界与锁死检查](docs/troubleshooting/claude-ip-allowlist-boundaries.md) | 限制密钥来源时，怎样避免漏掉运行环境或锁死管理员？ |
 | [每个有效任务究竟花了多少钱](docs/effective-task-cost.md) | 如何比较不同接口的实际成本？ |
 | [用 CSV 离线复算有效任务成本](examples/effective-task-cost/README.md) | 如何把失败、返工和零合格结果计入单位成本？ |
 | [给 Agent 的搜索和抓取设费用边界](docs/updates/2026-10-23-deepseek-search-fetch-cost.md) | 固定订阅如何处理按次增长的联网工具费？ |
