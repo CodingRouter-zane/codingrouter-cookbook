@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-09T12:28:53+08:00",
+  "updated_at": "2026-11-13T12:34:00+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -61,9 +61,9 @@
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/effective-task-cost.md",
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1"
       ],
-      "verified_at": "2026-10-21",
-      "status": "published",
-      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/examples/effective-task-cost/README.md",
+      "verified_at": "2026-11-13",
+      "status": "pr_pending",
+      "content_url": null,
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/1",
       "pr_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/2",
       "product_facts": {
@@ -115,11 +115,12 @@
       "topic_type": "选型成本",
       "source_urls": [
         "https://platform.claude.com/docs/en/release-notes/overview",
-        "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+        "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+        "https://platform.claude.com/docs/en/about-claude/pricing"
       ],
-      "verified_at": "2026-11-01",
-      "status": "candidate",
-      "content_url": null,
+      "verified_at": "2026-11-13",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/updates/2026-11-13-claude-opus-4-8-fast-migration.md",
       "issue_url": null,
       "pr_url": null,
       "product_facts": {
