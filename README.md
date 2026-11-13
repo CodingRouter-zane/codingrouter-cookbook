@@ -15,6 +15,7 @@ Practical guides for evaluating and integrating AI model APIs.
 | [Claude IP 白名单边界与锁死检查](docs/troubleshooting/claude-ip-allowlist-boundaries.md) | 限制密钥来源时，怎样避免漏掉运行环境或锁死管理员？ |
 | [每个有效任务究竟花了多少钱](docs/effective-task-cost.md) | 如何比较不同接口的实际成本？ |
 | [用 CSV 离线复算有效任务成本](examples/effective-task-cost/README.md) | 如何把失败、返工和零合格结果计入单位成本？ |
+| [Claude Opus 4.8 fast 迁移与成本检查](docs/updates/2026-11-13-claude-opus-4-8-fast-migration.md) | 11月30日后快模式报错，怎样比较速度与每个有效任务成本？ |
 | [给 Agent 的搜索和抓取设费用边界](docs/updates/2026-10-23-deepseek-search-fetch-cost.md) | 固定订阅如何处理按次增长的联网工具费？ |
 | [LiteLLM Enterprise 安全升级检查](docs/updates/2026-10-30-litellm-enterprise-master-key-security.md) | Release 页写“无需行动”，为什么安全公告仍要求判断版本？ |
 | [Grok Imagine 旧 slug 迁移检查](docs/updates/2026-11-06-grok-imagine-image-quality-migration.md) | 接口仍成功，怎样确认画质档和成本没有悄悄变化？ |
