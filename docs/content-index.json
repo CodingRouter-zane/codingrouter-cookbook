@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-13T12:34:00+08:00",
+  "updated_at": "2026-11-14T12:28:59.371+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -416,6 +416,23 @@
         "https://github.com/vercel/ai/releases/tag/ai%407.0.163"
       ],
       "verified_at": "2026-11-07",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-claude-self-hosted-managed-agents-boundary",
+      "title": "Agent 服务自托管了，模型请求就不出域吗？Claude Managed Agents 的部署边界",
+      "topic_type": "选型成本",
+      "source_urls": [
+        "https://platform.claude.com/docs/en/release-notes/overview"
+      ],
+      "verified_at": "2026-11-14",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
