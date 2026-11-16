@@ -13,6 +13,7 @@ Practical guides for evaluating and integrating AI model APIs.
 | [工具禁用的执行边界](docs/troubleshooting/tool-choice-none.md) | 写了 `toolChoice: 'none'`，怎样确认工具真的不会执行？ |
 | [流式 JSON 片段与最终值](docs/troubleshooting/partial-json-streaming.md) | 一个片段暂时不是合法 JSON，何时才算真正失败？ |
 | [Claude IP 白名单边界与锁死检查](docs/troubleshooting/claude-ip-allowlist-boundaries.md) | 限制密钥来源时，怎样避免漏掉运行环境或锁死管理员？ |
+| [Claude API 2026-10-21 代理鉴权迁移](docs/troubleshooting/claude-api-2026-10-21-proxy-auth-migration.md) | SDK 改发 Authorization 后，怎样避免旧代理和双凭据配置失效？ |
 | [每个有效任务究竟花了多少钱](docs/effective-task-cost.md) | 如何比较不同接口的实际成本？ |
 | [用 CSV 离线复算有效任务成本](examples/effective-task-cost/README.md) | 如何把失败、返工和零合格结果计入单位成本？ |
 | [Claude Opus 4.8 fast 迁移与成本检查](docs/updates/2026-11-13-claude-opus-4-8-fast-migration.md) | 11月30日后快模式报错，怎样比较速度与每个有效任务成本？ |
