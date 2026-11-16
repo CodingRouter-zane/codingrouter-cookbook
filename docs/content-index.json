@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-14T12:28:59.371+08:00",
+  "updated_at": "2026-11-16T12:33:48.204+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -172,9 +172,9 @@
         "https://platform.claude.com/docs/en/release-notes/overview",
         "https://platform.claude.com/docs/en/api/migration-2026-10-21"
       ],
-      "verified_at": "2026-10-22",
-      "status": "candidate",
-      "content_url": null,
+      "verified_at": "2026-11-16",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/troubleshooting/claude-api-2026-10-21-proxy-auth-migration.md",
       "issue_url": null,
       "pr_url": null,
       "product_facts": {
