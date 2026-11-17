@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-16T12:33:48.204+08:00",
+  "updated_at": "2026-11-17T12:28:22+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -362,7 +362,7 @@
         "https://platform.claude.com/docs/en/build-with-claude/text-watermark",
         "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
       ],
-      "verified_at": "2026-11-04",
+      "verified_at": "2026-11-17",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
@@ -433,6 +433,24 @@
         "https://platform.claude.com/docs/en/release-notes/overview"
       ],
       "verified_at": "2026-11-14",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-openai-csam-review-boundary",
+      "title": "分类器免费，不等于能自动封禁：CSAM 图片审核如何保留人工复核",
+      "topic_type": "多模态合规与人工复核",
+      "source_urls": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/csam-classifier"
+      ],
+      "verified_at": "2026-11-17",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
