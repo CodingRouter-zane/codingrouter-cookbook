@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-17T12:28:22+08:00",
+  "updated_at": "2026-11-18T12:34:24+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -451,6 +451,60 @@
         "https://developers.openai.com/api/docs/guides/csam-classifier"
       ],
       "verified_at": "2026-11-17",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-gpt-6-2-migration-guard",
+      "title": "模型名只改一行，工具调用却可能失效：GPT-6.2 迁移检查",
+      "topic_type": "接入迁移与Agent兼容",
+      "source_urls": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/latest-model"
+      ],
+      "verified_at": "2026-11-18",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-openai-background-window-cost",
+      "title": "等两小时能便宜30%，但用户还在等吗？后台完成窗口如何算真实任务成本",
+      "topic_type": "选型成本与异步工作流",
+      "source_urls": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/background"
+      ],
+      "verified_at": "2026-11-18",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-claude-linked-billing-boundary",
+      "title": "让客户自己付 Claude 账单，为什么不能当成零风险转嫁成本？",
+      "topic_type": "客户计费与权限边界",
+      "source_urls": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections"
+      ],
+      "verified_at": "2026-11-18",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
