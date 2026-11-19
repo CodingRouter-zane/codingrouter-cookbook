@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-18T12:34:24+08:00",
+  "updated_at": "2026-11-19T12:30:22.813+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -505,6 +505,24 @@
         "https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections"
       ],
       "verified_at": "2026-11-18",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-claude-sonnet-4-5-retirement",
+      "title": "固定版本也会到期：Claude Sonnet 4.5 11月30日退休前怎么迁移？",
+      "topic_type": "模型退役与接入迁移",
+      "source_urls": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      ],
+      "verified_at": "2026-11-19",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
