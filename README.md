@@ -16,6 +16,7 @@ Practical guides for evaluating and integrating AI model APIs.
 | [Claude API 2026-10-21 代理鉴权迁移](docs/troubleshooting/claude-api-2026-10-21-proxy-auth-migration.md) | SDK 改发 Authorization 后，怎样避免旧代理和双凭据配置失效？ |
 | [每个有效任务究竟花了多少钱](docs/effective-task-cost.md) | 如何比较不同接口的实际成本？ |
 | [用 CSV 离线复算有效任务成本](examples/effective-task-cost/README.md) | 如何把失败、返工和零合格结果计入单位成本？ |
+| [Claude Sonnet 4.5 退役迁移检查](docs/updates/2026-11-20-claude-sonnet-4-5-retirement.md) | 固定版本11月30日退役前，怎样检查工具、thinking和回滚？ |
 | [Claude Opus 4.8 fast 迁移与成本检查](docs/updates/2026-11-13-claude-opus-4-8-fast-migration.md) | 11月30日后快模式报错，怎样比较速度与每个有效任务成本？ |
 | [给 Agent 的搜索和抓取设费用边界](docs/updates/2026-10-23-deepseek-search-fetch-cost.md) | 固定订阅如何处理按次增长的联网工具费？ |
 | [LiteLLM Enterprise 安全升级检查](docs/updates/2026-10-30-litellm-enterprise-master-key-security.md) | Release 页写“无需行动”，为什么安全公告仍要求判断版本？ |
