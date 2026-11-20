@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-19T12:30:22.813+08:00",
+  "updated_at": "2026-11-20T12:29:12.268+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -520,11 +520,12 @@
       "topic_type": "模型退役与接入迁移",
       "source_urls": [
         "https://platform.claude.com/docs/en/release-notes/overview",
-        "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+        "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+        "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide"
       ],
-      "verified_at": "2026-11-19",
-      "status": "candidate",
-      "content_url": null,
+      "verified_at": "2026-11-20",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/updates/2026-11-20-claude-sonnet-4-5-retirement.md",
       "issue_url": null,
       "pr_url": null,
       "product_facts": {
