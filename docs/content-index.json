@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-20T12:29:12.268+08:00",
+  "updated_at": "2026-11-21T12:33:05.755+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -526,6 +526,43 @@
       "verified_at": "2026-11-20",
       "status": "published",
       "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/updates/2026-11-20-claude-sonnet-4-5-retirement.md",
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-ai-sdk-auto-denial-signature",
+      "title": "策略已经拒绝，旧审批签名为什么还能让工具执行？AI SDK 7.0.178 升级检查",
+      "topic_type": "接入安全与审批",
+      "source_urls": [
+        "https://github.com/vercel/ai/releases/tag/ai%407.0.178",
+        "https://github.com/vercel/ai/blob/main/content/docs/03-ai-sdk-core/15-tools-and-tool-calling.mdx"
+      ],
+      "verified_at": "2026-11-21",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-openai-live-standby-cost",
+      "title": "语音助手保持连接还是直接断开？用 GPT-Live standby 控制空闲成本与唤醒延迟",
+      "topic_type": "选型成本与接入",
+      "source_urls": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/live-conversations",
+        "https://developers.openai.com/api/docs/models/gpt-live-1.1"
+      ],
+      "verified_at": "2026-11-21",
+      "status": "candidate",
+      "content_url": null,
       "issue_url": null,
       "pr_url": null,
       "product_facts": {
