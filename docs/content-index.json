@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-21T12:33:05.755+08:00",
+  "updated_at": "2026-11-22T12:35:51.708+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -561,6 +561,24 @@
         "https://developers.openai.com/api/docs/models/gpt-live-1.1"
       ],
       "verified_at": "2026-11-21",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-ai-sdk-live-route-invalid-model",
+      "title": "模型明明存在，网关为什么报 invalid_model？AI SDK 7.0.179 的 Live 路由检查",
+      "topic_type": "接入排错",
+      "source_urls": [
+        "https://github.com/vercel/ai/releases/tag/ai%407.0.179",
+        "https://developers.openai.com/api/docs/guides/live"
+      ],
+      "verified_at": "2026-11-22",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
