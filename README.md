@@ -11,6 +11,7 @@ Practical guides for evaluating and integrating AI model APIs.
 | [API 接入前的验收清单](docs/api-acceptance.md) | 接口能返回内容，是否足够上线？ |
 | [重试、停止与回退](docs/troubleshooting/retry-budget.md) | API 失败后，怎样避免越重试越慢？ |
 | [工具禁用的执行边界](docs/troubleshooting/tool-choice-none.md) | 写了 `toolChoice: 'none'`，怎样确认工具真的不会执行？ |
+| [自动拒绝后的签名与密钥轮换](docs/troubleshooting/ai-sdk-auto-denial-signature.md) | 升级 AI SDK 后，怎样撤销旧审批签名并恢复合法审批？ |
 | [流式 JSON 片段与最终值](docs/troubleshooting/partial-json-streaming.md) | 一个片段暂时不是合法 JSON，何时才算真正失败？ |
 | [Claude IP 白名单边界与锁死检查](docs/troubleshooting/claude-ip-allowlist-boundaries.md) | 限制密钥来源时，怎样避免漏掉运行环境或锁死管理员？ |
 | [Claude API 2026-10-21 代理鉴权迁移](docs/troubleshooting/claude-api-2026-10-21-proxy-auth-migration.md) | SDK 改发 Authorization 后，怎样避免旧代理和双凭据配置失效？ |
