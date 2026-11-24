@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-23T12:33:49.809+08:00",
+  "updated_at": "2026-11-24T12:33:04.458+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -98,9 +98,10 @@
       "source_urls": [
         "https://openrouter.ai/docs/api-reference/errors-and-debugging",
         "https://html.spec.whatwg.org/multipage/server-sent-events.html",
-        "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/12"
+        "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/12",
+        "https://github.com/CodingRouter-zane/codingrouter-cookbook/actions/runs/45183451892"
       ],
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "status": "pr_pending",
       "content_url": null,
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/14",
@@ -582,6 +583,24 @@
         "https://developers.openai.com/api/docs/guides/live"
       ],
       "verified_at": "2026-11-22",
+      "status": "candidate",
+      "content_url": null,
+      "issue_url": null,
+      "pr_url": null,
+      "product_facts": {
+        "public_source_urls": [],
+        "verification_status": "unknown"
+      }
+    },
+    {
+      "topic_id": "cr-claude-efs-storage-boundary",
+      "title": "零留存为什么仍有加密副本？Claude EFS 的存储与功能边界",
+      "topic_type": "企业部署与数据留存",
+      "source_urls": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview"
+      ],
+      "verified_at": "2026-11-24",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
