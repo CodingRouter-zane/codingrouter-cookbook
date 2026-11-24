@@ -48,7 +48,7 @@ jobs:
           DESIRED_MODEL: ${{ vars.CODEX_MODEL || '6.1-Sol' }}
         run: python3 .github/scripts/cloud_agent.py resolve-model
       - name: Verify actual Codex Responses connection
-        uses: openai/codex-action@bdf19a4a223ec2549a3e2274a0cf61556bc07675
+        uses: openai/codex-action@306c6a196a99dcc6582530c396a19d2672d5e9ec
         with:
           openai-api-key: ${{ secrets.CODINGROUTER_API_KEY }}
           responses-api-endpoint: ${{ vars.CODEX_RESPONSES_API_URL || 'https://api.codingrouter.ai/v1/responses' }}
@@ -131,7 +131,7 @@ jobs:
           DESIRED_MODEL: ${{ vars.CODEX_MODEL || '6.1-Sol' }}
         run: python3 .github/scripts/cloud_agent.py resolve-model
       - name: Develop with Codex
-        uses: openai/codex-action@bdf19a4a223ec2549a3e2274a0cf61556bc07675 # v1, verified 2026-10-15
+        uses: openai/codex-action@306c6a196a99dcc6582530c396a19d2672d5e9ec # upstream ACL fix #192, reviewed 2026-11-24
         with:
           openai-api-key: ${{ secrets.CODINGROUTER_API_KEY || secrets.OPENAI_API_KEY }}
           responses-api-endpoint: ${{ secrets.CODINGROUTER_API_KEY != '' && (vars.CODEX_RESPONSES_API_URL || 'https://api.codingrouter.ai/v1/responses') || '' }}
