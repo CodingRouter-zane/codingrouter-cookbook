@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-24T23:04:25.363+08:00",
+  "updated_at": "2026-11-25T12:31:50.573+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -600,9 +600,11 @@
       "topic_type": "企业部署与数据留存",
       "source_urls": [
         "https://platform.claude.com/docs/en/release-notes/overview",
-        "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview"
+        "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview",
+        "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/setup-console",
+        "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/faq"
       ],
-      "verified_at": "2026-11-24",
+      "verified_at": "2026-11-25",
       "status": "candidate",
       "content_url": null,
       "issue_url": null,
