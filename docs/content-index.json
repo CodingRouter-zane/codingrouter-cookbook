@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-25T12:31:50.573+08:00",
+  "updated_at": "2026-11-26T12:28:06.384+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -101,13 +101,15 @@
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/12",
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/actions/runs/45183451892",
         "https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/15",
-        "https://github.com/CodingRouter-zane/codingrouter-cookbook/actions/runs/45409843844"
+        "https://github.com/CodingRouter-zane/codingrouter-cookbook/actions/runs/45409843844",
+        "https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/13",
+        "https://github.com/CodingRouter-zane/codingrouter-cookbook/actions/runs/45621951523"
       ],
-      "verified_at": "2026-11-24",
+      "verified_at": "2026-11-26",
       "status": "pr_pending",
       "content_url": null,
       "issue_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/issues/14",
-      "pr_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/13",
+      "pr_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/pull/16",
       "product_facts": {
         "public_source_urls": [],
         "verification_status": "unknown"
