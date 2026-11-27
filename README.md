@@ -15,6 +15,7 @@ Practical guides for evaluating and integrating AI model APIs.
 | [流式 JSON 片段与最终值](docs/troubleshooting/partial-json-streaming.md) | 一个片段暂时不是合法 JSON，何时才算真正失败？ |
 | [Claude IP 白名单边界与锁死检查](docs/troubleshooting/claude-ip-allowlist-boundaries.md) | 限制密钥来源时，怎样避免漏掉运行环境或锁死管理员？ |
 | [Claude API 2026-10-21 代理鉴权迁移](docs/troubleshooting/claude-api-2026-10-21-proxy-auth-migration.md) | SDK 改发 Authorization 后，怎样避免旧代理和双凭据配置失效？ |
+| [Claude EFS 选型与完整成本](docs/updates/2026-11-27-claude-efs-selection-cost.md) | 零留存不另收费，为什么仍要评估云账单和功能改造？ |
 | [每个有效任务究竟花了多少钱](docs/effective-task-cost.md) | 如何比较不同接口的实际成本？ |
 | [用 CSV 离线复算有效任务成本](examples/effective-task-cost/README.md) | 如何把失败、返工和零合格结果计入单位成本？ |
 | [Claude Sonnet 4.5 退役迁移检查](docs/updates/2026-11-20-claude-sonnet-4-5-retirement.md) | 固定版本11月30日退役前，怎样检查工具、thinking和回滚？ |
