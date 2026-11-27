@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-26T12:28:06.384+08:00",
+  "updated_at": "2026-11-27T12:27:43.605+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -598,7 +598,7 @@
     },
     {
       "topic_id": "cr-claude-efs-storage-boundary",
-      "title": "零留存为什么仍有加密副本？Claude EFS 的存储与功能边界",
+      "title": "零留存不等于零账单：Claude EFS 选型前要算清哪些成本？",
       "topic_type": "企业部署与数据留存",
       "source_urls": [
         "https://platform.claude.com/docs/en/release-notes/overview",
@@ -606,9 +606,9 @@
         "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/setup-console",
         "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/faq"
       ],
-      "verified_at": "2026-11-25",
-      "status": "candidate",
-      "content_url": null,
+      "verified_at": "2026-11-27",
+      "status": "published",
+      "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/updates/2026-11-27-claude-efs-selection-cost.md",
       "issue_url": null,
       "pr_url": null,
       "product_facts": {
