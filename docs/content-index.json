@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-27T12:27:43.605+08:00",
+  "updated_at": "2026-11-28T12:36:00+08:00",
   "topics": [
     {
       "topic_id": "cr-api-acceptance",
@@ -124,7 +124,7 @@
         "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
         "https://platform.claude.com/docs/en/about-claude/pricing"
       ],
-      "verified_at": "2026-11-13",
+      "verified_at": "2026-11-28",
       "status": "published",
       "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/updates/2026-11-13-claude-opus-4-8-fast-migration.md",
       "issue_url": null,
@@ -529,7 +529,7 @@
         "https://platform.claude.com/docs/en/about-claude/model-deprecations",
         "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide"
       ],
-      "verified_at": "2026-11-20",
+      "verified_at": "2026-11-28",
       "status": "published",
       "content_url": "https://github.com/CodingRouter-zane/codingrouter-cookbook/blob/main/docs/updates/2026-11-20-claude-sonnet-4-5-retirement.md",
       "issue_url": null,
